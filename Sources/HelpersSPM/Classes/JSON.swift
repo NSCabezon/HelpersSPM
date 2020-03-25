@@ -2,6 +2,33 @@ import Foundation
 
 public typealias JSON = [String: Any]
 
+public enum FileExtension: String {
+	case json
+	case yaml
+}
+
+public func load<T: Decodable>(_ filename: String, fileExtension: FileExtension = .json, as type: T.Type = T.self, inBundle bundle: Bundle = Bundle.main) -> T {
+	let data: Data
+	
+	guard let filePath = bundle.path(forResource: filename, ofType: fileExtension.rawValue) else {
+		fatalError("Couldn’t find \(filename) in main bundle.")
+	}
+
+	let fileURL = URL(fileURLWithPath: filePath)
+	do {
+		data = try Data(contentsOf: fileURL)
+	} catch {
+		fatalError("Couldn’t load \(filename) from main bundle:\n\(error)")
+	}
+	
+	do {
+		let decoder = JSONDecoder()
+		return try decoder.decode(T.self, from: data)
+	} catch {
+		fatalError("Couldn’t parse \(filename) as \(T.self):\n\(error)")
+	}
+}
+
 public extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
     func toJSONString() -> String? {
         guard let data = try? JSONSerialization.data(withJSONObject: self, options: []),
