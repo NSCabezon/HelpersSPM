@@ -2,7 +2,7 @@ import Foundation
 
 public typealias JSON = [String: Any]
 
-class Mock {
+public class Mock {
 	public static func loadJSON<T: Decodable>(_ filename: String, as type: T.Type = T.self, inBundle bundle: Bundle = Bundle.main) -> T {
 		let data: Data
 		
