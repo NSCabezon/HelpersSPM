@@ -1,4 +1,4 @@
-import Foundation
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 @IBDesignable
@@ -79,3 +79,4 @@ public class UIPlaceHolderTextView: UITextView {
         }
     }
 }
+#endif

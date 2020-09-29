@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UIImageView {
@@ -27,3 +28,4 @@ public extension UIImageView {
 		layer.mask = mask
 	}
 }
+#endif

@@ -1,10 +1,4 @@
-//
-//  File.swift
-//  
-//
-//  Created by Ivan Cabezon on 09/02/2020.
-//
-
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public protocol NibInstantiate {
@@ -28,3 +22,4 @@ public extension NibInstantiate where Self: UIViewController {
 		return Self(nibName: nibName, bundle: Bundle(for: self))
 	}
 }
+#endif

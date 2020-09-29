@@ -1,4 +1,4 @@
-import Foundation
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UICollectionView {
@@ -23,3 +23,4 @@ public extension UICollectionView {
         return cell
     }
 }
+#endif

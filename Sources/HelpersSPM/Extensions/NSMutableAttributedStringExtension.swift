@@ -1,10 +1,4 @@
-//
-//  NSMutableAttributedStringExtension.swift
-//  UISDK-iOS
-//
-//  Created by Banco Santander Brasil on 13/03/19.
-//
-
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension NSMutableAttributedString {
@@ -56,6 +50,5 @@ public extension NSMutableAttributedString {
         }
         return self
     }
-    
-    
 }
+#endif

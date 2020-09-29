@@ -1,3 +1,4 @@
+#if !os(tvOS)
 import Foundation
 import EventKit
 
@@ -32,3 +33,4 @@ public extension EKParticipant {
         return nil
     }
 }
+#endif

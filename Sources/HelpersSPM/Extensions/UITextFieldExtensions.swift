@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UITextField {
@@ -5,3 +6,4 @@ public extension UITextField {
         return text ?? ""
     }
 }
+#endif

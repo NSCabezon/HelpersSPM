@@ -1,4 +1,4 @@
-import Foundation
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension CGColor {
@@ -6,3 +6,4 @@ public extension CGColor {
         return UIColor(cgColor: self)
     }
 }
+#endif

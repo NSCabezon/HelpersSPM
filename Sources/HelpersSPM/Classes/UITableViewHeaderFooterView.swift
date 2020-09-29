@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UITableViewHeaderFooterView {
@@ -9,3 +10,4 @@ public extension UITableViewHeaderFooterView {
 		return UINib(nibName: nibName, bundle: nil)
 	}
 }
+#endif
