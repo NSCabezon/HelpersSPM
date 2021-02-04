@@ -1,6 +1,11 @@
 import Foundation
 
 public extension String {
+    init(random length: Int) {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        self = String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
     var base64Encoded: String {
         guard let plainData = data(using: .utf8) else {
             fatalError("could not get data from string")
