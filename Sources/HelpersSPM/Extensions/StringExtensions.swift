@@ -118,6 +118,10 @@ public extension String {
     var URLEscapedString: String {
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
     }
+    
+    var UnEscapedString: String {
+        return removingPercentEncoding!
+    }
 	
 	var linkedInPattern: String {
         return "^http[s]?://(linkedin.com|.+\\.linkedin.com)/in/(.*)$"
