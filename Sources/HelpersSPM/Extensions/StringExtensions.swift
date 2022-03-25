@@ -1,6 +1,11 @@
 import Foundation
 
 public extension String {
+    init(random length: Int) {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        self = String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
     var base64Encoded: String {
         guard let plainData = data(using: .utf8) else {
             fatalError("could not get data from string")
@@ -66,15 +71,14 @@ public extension String {
         return occurrences.anyMatch(with: self)
     }
     
-    func isValidUrl() -> Bool {
+	var isValidUrl: Bool {
         let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
         let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
         return predicate.evaluate(with: self)
     }
     
-    func isValidEmail() -> Bool {
+	var isValidEmail: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
@@ -114,6 +118,10 @@ public extension String {
     var URLEscapedString: String {
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
     }
+    
+    var UnEscapedString: String {
+        return removingPercentEncoding!
+    }
 	
 	var linkedInPattern: String {
         return "^http[s]?://(linkedin.com|.+\\.linkedin.com)/in/(.*)$"
@@ -125,6 +133,12 @@ public extension String {
     
     var linkedInUsername: String? {
         return match(forPattern: linkedInPattern, index: 2)
+    }
+
+    func nsRange(of string: String) -> NSRange? {
+        let substringRange = self.range(of: string)!
+        let nsRange = NSRange(substringRange, in: self)
+        return nsRange
     }
 }
 

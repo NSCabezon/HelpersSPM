@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UILabel {
@@ -5,4 +6,4 @@ public extension UILabel {
 		attributedText = NSAttributedString.amountAttrString(withAmount: amount, currency: currency, font: font, textColor: textColor, shrinkPercentage: shrinkPercentage, locale: locale, negativeColor: negativeColor)
 	}
 }
-
+#endif

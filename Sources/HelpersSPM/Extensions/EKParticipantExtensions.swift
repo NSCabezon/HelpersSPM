@@ -1,3 +1,4 @@
+#if !os(tvOS)
 import Foundation
 import EventKit
 
@@ -18,7 +19,7 @@ public extension EKParticipant {
         // Getting from url (only on iOS10+)
         if #available(iOS 10.0, *) {
             let emailFromURL = url.absoluteString.replacingOccurrences(of: "mailto:", with: "")
-            if emailFromURL.isValidEmail() {
+            if emailFromURL.isValidEmail {
                 return emailFromURL
             }
         }
@@ -32,3 +33,4 @@ public extension EKParticipant {
         return nil
     }
 }
+#endif

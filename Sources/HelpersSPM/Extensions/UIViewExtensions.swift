@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UIView {
@@ -122,6 +123,5 @@ public extension UIView {
         removeConstraint(attribute: attribute)
         NSLayoutConstraint(item: self, attribute: attribute, relatedBy: .equal, toItem: otherView, attribute: attribute, multiplier: 1, constant: value).isActive = true
     }
-        
-
 }
+#endif

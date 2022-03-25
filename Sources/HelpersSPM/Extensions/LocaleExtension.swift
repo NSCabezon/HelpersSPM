@@ -1,10 +1,3 @@
-//
-//  LocaleExtension.swift
-//  UISDK-iOS
-//
-//  Created by Banco Santander Brasil on 18/03/19.
-//
-
 import Foundation
 
 extension Locale {

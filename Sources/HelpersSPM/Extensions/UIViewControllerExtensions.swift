@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UIViewController {
@@ -9,3 +10,4 @@ public extension UIViewController {
         return viewController
     }
 }
+#endif

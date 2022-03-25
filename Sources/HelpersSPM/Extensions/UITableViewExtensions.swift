@@ -1,4 +1,4 @@
-import Foundation
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UITableView {
@@ -33,3 +33,4 @@ public extension UITableView {
         return header
     }
 }
+#endif

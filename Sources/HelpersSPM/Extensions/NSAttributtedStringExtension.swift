@@ -1,11 +1,4 @@
-//
-//  NSAttributtedStringExtension.swift
-//  Helpers
-//
-//  Created by MAC Pilot Globile on 12/07/2019.
-//  Copyright © 2019 Sebastián Varela. All rights reserved.
-//
-
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension NSAttributedString {
@@ -75,3 +68,4 @@ public extension NSAttributedString {
 		return attrText
 	}
 }
+#endif

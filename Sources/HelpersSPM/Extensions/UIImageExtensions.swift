@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UIImage {
@@ -46,3 +47,4 @@ public extension UIImage {
 		return result
 	}
 }
+#endif

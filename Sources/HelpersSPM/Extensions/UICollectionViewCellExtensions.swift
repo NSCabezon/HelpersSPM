@@ -1,4 +1,4 @@
-import Foundation
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UICollectionViewCell {
@@ -14,3 +14,4 @@ public extension UICollectionViewCell {
         return UINib(nibName: nibName, bundle: Bundle(for: self))
     }
 }
+#endif

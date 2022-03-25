@@ -1,11 +1,4 @@
-//
-//  UISegmentedControlExtensions.swift
-//  Helpers
-//
-//  Created by Ivan Cabezon on 08/02/2020.
-//  Copyright © 2020 Ivan Cabezon. All rights reserved.
-//
-
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UISegmentedControl {
@@ -14,3 +7,4 @@ public extension UISegmentedControl {
 		removeSegment(at: lastIndex, animated: animated)
 	}
 }
+#endif

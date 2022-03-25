@@ -1,3 +1,4 @@
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public extension UIButton {
@@ -5,3 +6,4 @@ public extension UIButton {
 		setBackgroundImage(UIImage(with: color), for: state)
 	}
 }
+#endif
