@@ -7,9 +7,10 @@ final class HelpersSPMTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        let expectedResult = "Jan 1, 1970 at 1:00:00 AM"
+        let expectedResult = "Jan 1, 1970 at 12:00:00 AM"
         let df = DateFormatter.medium
         let date = Date(timeIntervalSince1970: 0)
+        df.timeZone = TimeZone(abbreviation: "GMT")
         let result = df.string(from: date)
         XCTAssertEqual(expectedResult, result)
     }
