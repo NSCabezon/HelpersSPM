@@ -2,14 +2,14 @@ import Foundation
 
 public extension DateFormatter {
     static var medium: DateFormatter = {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateStyle = .medium
-		dateFormatter.timeStyle = .medium
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.locale = Locale(identifier: "en_US")
-		return dateFormatter
-	}()
-
+        return dateFormatter
+    }()
+    
     static var iso8601: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
@@ -27,4 +27,23 @@ public extension DateFormatter {
         formatter.locale = Locale(identifier: "en_US")
         return formatter
     }()
+    
+    static var eventFormat: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return dateFormatter
+    }
+    
+    static var teslaFormat: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+        return dateFormatter
+    }
+    
+    static var dayFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        return dateFormatter
+    }
 }
