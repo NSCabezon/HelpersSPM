@@ -3,7 +3,7 @@ import XCTest
 @testable import HelpersSPM
 
 final class HelpersSPMTests: XCTestCase {
-    func testMediumFormatter() {
+    @MainActor func testMediumFormatter() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -15,7 +15,7 @@ final class HelpersSPMTests: XCTestCase {
         XCTAssertEqual(expectedResult, result)
     }
     
-    func testISO8601Formatter() {
+    @MainActor func testISO8601Formatter() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -26,7 +26,7 @@ final class HelpersSPMTests: XCTestCase {
         XCTAssertEqual(expectedResult, result)
     }
 
-    static var allTests = [
+    @MainActor static var allTests = [
         ("FormatterTests", testMediumFormatter),
         ("FormatterTests", testISO8601Formatter),
     ]

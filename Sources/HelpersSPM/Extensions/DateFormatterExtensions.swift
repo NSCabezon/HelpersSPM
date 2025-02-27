@@ -1,6 +1,7 @@
 import Foundation
 
 public extension DateFormatter {
+    @MainActor
     static var medium: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -10,6 +11,7 @@ public extension DateFormatter {
         return dateFormatter
     }()
     
+    @MainActor
     static var iso8601: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
@@ -19,6 +21,7 @@ public extension DateFormatter {
         return formatter
     }()
     
+    @MainActor
     static var iso8601WithoutDecimals: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

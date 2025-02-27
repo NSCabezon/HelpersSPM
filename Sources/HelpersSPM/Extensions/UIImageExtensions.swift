@@ -1,6 +1,7 @@
 #if !os(macOS) && !os(watchOS)
 import UIKit
 
+@MainActor
 public extension UIImage {
 	convenience init?(with color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
 		let rect = CGRect(origin: .zero, size: size)
